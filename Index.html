@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Connected to Yusoof Network</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to Yusoof Network</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
@@ -11,46 +11,56 @@
       margin: 0;
       padding: 0;
       font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #ffffff;
+      background: radial-gradient(ellipse at center, #1a1c1d 0%, #0d0e10 100%);
+      color: #00f0ff;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      overflow: hidden;
+      min-height: 100vh;
+      background-image: url('https://www.transparenttextures.com/patterns/black-felt.png');
+      background-size: 100px 100px;
+      background-repeat: repeat;
+      text-align: center;
     }
 
     .container {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 50px 40px;
+      background: rgba(0, 0, 0, 0.6);
+      border: 2px solid #00f0ff33;
       border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
-      animation: fadeIn 1.5s ease-out;
+      padding: 8vw 6vw;
+      max-width: 90vw;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
+      animation: fadeIn 1.2s ease-in;
     }
 
     h1 {
-      font-size: 2.5rem;
-      color: #00ffe5;
-      margin-bottom: 10px;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      color: #00f0ff;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #00f0ff33;
+      padding-bottom: 0.5rem;
     }
 
     p {
-      font-size: 1.1rem;
-      color: #b0f5ff;
-      margin-top: 0.5rem;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: #a0e6ff;
+      margin-top: 1rem;
+      line-height: 1.5;
     }
 
-    .glow {
-      text-shadow: 0 0 10px #00ffe5, 0 0 20px #00ffe5, 0 0 30px #00ffe5;
+    .hud-line {
+      height: 2px;
+      background: linear-gradient(to right, #00f0ff, transparent);
+      margin: 2rem 0;
+      opacity: 0.4;
+      animation: scan 4s linear infinite;
     }
 
     .footer {
-      margin-top: 30px;
-      font-size: 0.8rem;
-      color: #66ffff99;
+      font-size: clamp(0.65rem, 1.5vw, 0.8rem);
+      color: #69e7ff88;
+      margin-top: 2rem;
     }
 
     @keyframes fadeIn {
@@ -63,15 +73,28 @@
         transform: translateY(0);
       }
     }
+
+    @keyframes scan {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        max-width: 600px;
+        padding: 50px;
+      }
+    }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <h1 class="glow">ACCESS GRANTED</h1>
+    <h1>ACCESS GRANTED</h1>
     <p>You are now connected to the Aboobucker Yusoof Guest Network.</p>
-    <p>Network systems online. Enjoy your internet access.</p>
-    <div class="footer">© 2025 Aboobucker Yusoof Home – Smart Network Access</div>
+    <div class="hud-line"></div>
+    <p>Welcome, guest. Internet systems are now unlocked.</p>
+    <div class="footer">© 2025 Aboobucker Yusoof Network Interface</div>
   </div>
 
 </body>
