@@ -18,29 +18,35 @@
       justify-content: center;
       height: 100vh;
       overflow: hidden;
+      position: relative;
+      animation: backgroundAnimation 8s infinite alternate;
     }
 
     .container {
       background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(15px);
       border: 1px solid rgba(255, 255, 255, 0.2);
       padding: 50px 40px;
       border-radius: 20px;
       text-align: center;
-      box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
       animation: fadeIn 1.5s ease-out;
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       color: #00ffe5;
       margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      text-shadow: 0 0 15px #00ffe5, 0 0 25px #00ffe5, 0 0 35px #00ffe5, 0 0 50px #00ffe5;
     }
 
     p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: #b0f5ff;
       margin-top: 0.5rem;
+      letter-spacing: 1px;
     }
 
     .glow {
@@ -49,8 +55,9 @@
 
     .footer {
       margin-top: 30px;
-      font-size: 0.8rem;
+      font-size: 1rem;
       color: #66ffff99;
+      letter-spacing: 1px;
     }
 
     @keyframes fadeIn {
@@ -63,12 +70,47 @@
         transform: translateY(0);
       }
     }
+
+    @keyframes backgroundAnimation {
+      0% {
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      }
+      50% {
+        background: linear-gradient(135deg, #1b2a35, #3e4b59, #4f6679);
+      }
+      100% {
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      }
+    }
+    
+    .pulse {
+      animation: pulseEffect 1.5s infinite alternate;
+    }
+
+    @keyframes pulseEffect {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .futuristic-border {
+      border: 3px solid #00ffe5;
+      padding: 10px;
+      border-radius: 5px;
+      animation: pulseEffect 2s infinite alternate;
+    }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <h1 class="glow">ACCESS GRANTED</h1>
+  <div class="container futuristic-border">
+    <h1 class="glow pulse">ACCESS GRANTED</h1>
     <p>You are now connected to the Aboobucker Yusoof Guest Network.</p>
     <p>Network systems online. Enjoy your internet access.</p>
     <div class="footer">© 2025 Aboobucker Yusoof Home – Smart Network Access</div>
