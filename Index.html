@@ -11,7 +11,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background: #0a0a0a;
       color: #ffffff;
       display: flex;
       align-items: center;
@@ -19,45 +19,46 @@
       height: 100vh;
       overflow: hidden;
       position: relative;
-      animation: backgroundAnimation 8s infinite alternate;
+      background: radial-gradient(circle, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5));
+      animation: backgroundAnimation 5s infinite alternate;
     }
 
     .container {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(15px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 50px 40px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      padding: 60px 40px;
       border-radius: 20px;
       text-align: center;
-      box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+      box-shadow: 0 0 60px rgba(255, 0, 0, 0.7), 0 0 100px rgba(255, 0, 0, 0.8);
       animation: fadeIn 1.5s ease-out;
+      position: relative;
+      overflow: hidden;
     }
 
     h1 {
-      font-size: 3rem;
-      color: #00ffe5;
-      margin-bottom: 10px;
+      font-size: 3.5rem;
+      color: #ff3a00;
       text-transform: uppercase;
-      letter-spacing: 4px;
-      text-shadow: 0 0 15px #00ffe5, 0 0 25px #00ffe5, 0 0 35px #00ffe5, 0 0 50px #00ffe5;
+      letter-spacing: 6px;
+      text-shadow: 0 0 15px #ff3a00, 0 0 30px #ff3a00, 0 0 45px #ff3a00, 0 0 60px #ff3a00;
+      animation: pulseGlow 1.5s infinite alternate;
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       color: #b0f5ff;
       margin-top: 0.5rem;
-      letter-spacing: 1px;
-    }
-
-    .glow {
-      text-shadow: 0 0 10px #00ffe5, 0 0 20px #00ffe5, 0 0 30px #00ffe5;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #00ffe5;
     }
 
     .footer {
       margin-top: 30px;
       font-size: 1rem;
       color: #66ffff99;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px #ff3a00, 0 0 20px #ff3a00;
     }
 
     @keyframes fadeIn {
@@ -73,16 +74,28 @@
 
     @keyframes backgroundAnimation {
       0% {
-        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        background: radial-gradient(circle, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5));
       }
       50% {
-        background: linear-gradient(135deg, #1b2a35, #3e4b59, #4f6679);
+        background: radial-gradient(circle, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
       }
       100% {
-        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        background: radial-gradient(circle, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5));
       }
     }
-    
+
+    @keyframes pulseGlow {
+      0% {
+        text-shadow: 0 0 15px #ff3a00, 0 0 30px #ff3a00, 0 0 45px #ff3a00, 0 0 60px #ff3a00;
+      }
+      50% {
+        text-shadow: 0 0 25px #ff3a00, 0 0 45px #ff3a00, 0 0 60px #ff3a00, 0 0 80px #ff3a00;
+      }
+      100% {
+        text-shadow: 0 0 15px #ff3a00, 0 0 30px #ff3a00, 0 0 45px #ff3a00, 0 0 60px #ff3a00;
+      }
+    }
+
     .pulse {
       animation: pulseEffect 1.5s infinite alternate;
     }
@@ -100,10 +113,10 @@
     }
 
     .futuristic-border {
-      border: 3px solid #00ffe5;
-      padding: 10px;
-      border-radius: 5px;
-      animation: pulseEffect 2s infinite alternate;
+      border: 3px solid #ff3a00;
+      padding: 15px;
+      border-radius: 10px;
+      animation: pulseGlow 2s infinite alternate;
     }
   </style>
 </head>
