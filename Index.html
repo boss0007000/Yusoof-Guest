@@ -3,166 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Yusoof Network Access</title>
+  <title>Connected to Yusoof Network</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
-
-    :root {
-      --primary: #00eaff;
-      --accent: #55f0ff;
-      --bg: #0b0c10;
-      --hud-line: rgba(0, 234, 255, 0.25);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
     body {
-      background: radial-gradient(circle at center, #131416 0%, var(--bg) 100%);
+      margin: 0;
+      padding: 0;
       font-family: 'Orbitron', sans-serif;
-      color: var(--primary);
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #ffffff;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       height: 100vh;
       overflow: hidden;
-      text-align: center;
-      padding: 20px;
     }
 
     .container {
-      position: relative;
-      background: rgba(10, 10, 15, 0.7);
-      border: 1px solid var(--hud-line);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 50px 40px;
       border-radius: 20px;
-      padding: 2.5rem 2rem;
-      max-width: 500px;
-      width: 100%;
-      backdrop-filter: blur(6px);
-      box-shadow: 0 0 8px rgba(0, 234, 255, 0.1);
-      z-index: 10;
-    }
-
-    .arc-reactor {
-      position: absolute;
-      top: -40px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: 100px;
-      background: radial-gradient(circle, var(--primary) 5%, #000 80%);
-      border-radius: 50%;
-      box-shadow: 0 0 25px rgba(0, 234, 255, 0.3);
-      animation: spin 6s linear infinite;
-      opacity: 0.1;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+      animation: fadeIn 1.5s ease-out;
     }
 
     h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: var(--primary);
-      border-bottom: 1px solid var(--hud-line);
-      padding-bottom: 0.5rem;
+      font-size: 2.5rem;
+      color: #00ffe5;
+      margin-bottom: 10px;
     }
 
     p {
-      font-size: 1rem;
-      color: var(--accent);
-      margin-top: 1rem;
-      line-height: 1.6;
+      font-size: 1.1rem;
+      color: #b0f5ff;
+      margin-top: 0.5rem;
     }
 
-    .hud-line {
-      height: 1px;
-      background: linear-gradient(to right, var(--primary), transparent);
-      margin: 2rem 0;
-      opacity: 0.4;
-      animation: scan 4s linear infinite;
+    .glow {
+      text-shadow: 0 0 10px #00ffe5, 0 0 20px #00ffe5, 0 0 30px #00ffe5;
     }
 
     .footer {
-      font-size: 0.75rem;
-      color: #55f0ff80;
-      margin-top: 2rem;
+      margin-top: 30px;
+      font-size: 0.8rem;
+      color: #66ffff99;
     }
 
-    /* HUD Overlay Lines */
-    .hud-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .hud-line-vertical, .hud-line-horizontal {
-      position: absolute;
-      background: rgba(0, 234, 255, 0.1);
-      animation: flicker 3s infinite alternate;
-    }
-
-    .hud-line-vertical {
-      width: 2px;
-      height: 100%;
-      left: 20%;
-    }
-
-    .hud-line-horizontal {
-      height: 2px;
-      width: 100%;
-      top: 40%;
-    }
-
-    @keyframes spin {
-      0% { transform: translateX(-50%) rotate(0deg); }
-      100% { transform: translateX(-50%) rotate(360deg); }
-    }
-
-    @keyframes scan {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-
-    @keyframes flicker {
-      0% { opacity: 0.1; }
-      100% { opacity: 0.4; }
-    }
-
-    @media (max-width: 480px) {
-      h1 { font-size: 1.6rem; }
-      p { font-size: 0.95rem; }
-      .container { padding: 2rem 1.5rem; }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="hud-overlay">
-    <div class="hud-line-vertical" style="left: 20%;"></div>
-    <div class="hud-line-vertical" style="left: 80%;"></div>
-    <div class="hud-line-horizontal" style="top: 30%;"></div>
-    <div class="hud-line-horizontal" style="top: 70%;"></div>
-  </div>
-
   <div class="container">
-    <div class="arc-reactor"></div>
-    <h1>ACCESS GRANTED</h1>
+    <h1 class="glow">ACCESS GRANTED</h1>
     <p>You are now connected to the Aboobucker Yusoof Guest Network.</p>
-    <div class="hud-line"></div>
-    <p>Welcome, guest. Network interface is active. Internet unlocked.</p>
-    <div class="footer">© 2025 Aboobucker Yusoof | Network Core Interface</div>
+    <p>Network systems online. Enjoy your internet access.</p>
+    <div class="footer">© 2025 Aboobucker Yusoof Home – Smart Network Access</div>
   </div>
-
-  <!-- Voice Greeting -->
-  <audio autoplay>
-    <source src="https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg" type="audio/ogg">
-    <!-- Replace with your own Iron Man-style MP3/OGG if you have a better one -->
-  </audio>
 
 </body>
 </html>
